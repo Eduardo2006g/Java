@@ -80,7 +80,7 @@ function drop(){
 	if ( event.target.className == "droptarget") {
 		const data = event.dataTransfer.getData("Text");
 		let c = event.path[0];
-		let e = c.childElementCount;
+		let t = c.childElementCount;
 		localFuturo = event.target.id.toString();
 		let ab = localAtual.substring(0,1);   
 		let cb = localAtual.substring(2,3);  
@@ -101,7 +101,7 @@ function drop(){
 			classeCapturada = captura.firstElementChild.className;
 			pecaCapturada = captura.firstElementChild;
 		}
-		if (e == '0' && cb != ef){
+		if (t == '0' && cb != ef){
 			if (classe == 'red' && cb > ef && cb - ef == 1 && jogada % 2 == 0 || cb - ef == 2 && classeCapturada == "black" && jogada % 2 == 0 || classe == 'black' && cb < ef && cb - ef == -1 && jogada % 2 == 1 || cb - ef == -2 && classeCapturada == "red" && jogada % 2 == 1) {
 				event.target.appendChild(document.getElementById(data));
 				if (classe == 'red' && ef == '0' || classe == 'black' && ef == '7'){
@@ -111,7 +111,7 @@ function drop(){
 				if(cb - ef == 2 || cb - ef == -2) {
 					pecaCapturada.remove();
 					pecaCapturada = '';
-					classeCapturada = '';
+					lasseCapturada = '';
 				}
 			}
 		}
